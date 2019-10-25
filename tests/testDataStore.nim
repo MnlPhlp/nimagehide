@@ -1,7 +1,9 @@
 import 
   unittest,
   nimagehide,
-  sequtils,sugar
+  sequtils,
+  sugar,
+  os
 
 test "hide Data in Image":
   let img = loadImage("tests/testImage.png")
@@ -25,3 +27,4 @@ test "hide Data in Image":
   test "discover and store":
     discoverAndStore("tests/testImageSecret.png","secret.txt")
     check(readFile("secret.txt")=="Hello Nim World !!")
+    removeFile("secret.txt")
