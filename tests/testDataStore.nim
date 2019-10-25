@@ -21,3 +21,7 @@ test "hide Data in Image":
     let img = loadImage("tests/testImageSecret.png")
     let data = img.discoverData()
     check(data.toString() == "Hello Nim World !!")
+
+  test "discover and store":
+    discoverAndStore("tests/testImageSecret.png","secret.txt")
+    check(readFile("secret.txt")=="Hello Nim World !!")
