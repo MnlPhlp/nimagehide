@@ -14,6 +14,7 @@ backend       = "cpp"
 
 requires "nim >= 1.0.0"
 requires "stb_image >= 2.3"
+requires "cligen >= 0.9.40"
 
 # Tasks
 import os
