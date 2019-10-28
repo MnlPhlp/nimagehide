@@ -1,4 +1,4 @@
-# nimagehide
+# nimagehide  [![Build Status](https://travis-ci.com/MnlPhlp/nimagehide.svg?branch=master)](https://travis-ci.com/MnlPhlp/nimagehide)
 This provides a library and cli for hiding messages or other files in images.
 
 For loading the images the library [stb_image](https://github.com/define-private-public/stb_image-Nim) is used.
