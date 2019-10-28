@@ -8,7 +8,7 @@ srcDir        = "src"
 installExt    = @["nim"]
 bin           = @["nimagehide"]
 
-backend       = "cpp"
+backend       = "c"
 
 # Dependencies
 
@@ -22,3 +22,4 @@ task docs,"generate docs":
   selfExec "doc2 --index:on --project --git.url:https://github.com/MnlPhlp/nimagehide --git.commit:master src/nimagehide.nim"
   rmDir("docs")
   mvDir(joinPath("src","htmldocs"),"docs")
+  mvFile(joinPath("docs","nimagehide.html"),joinPath("docs","index.html"))

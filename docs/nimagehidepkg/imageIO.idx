@@ -1,3 +1,3 @@
-Image	/mnt/d/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/imageIO.html#Image	imageIO: Image	
-loadImage	/mnt/d/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/imageIO.html#loadImage,string	imageIO: loadImage(filename: string): Image	
-storeImagePNG	/mnt/d/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/imageIO.html#storeImagePNG.e,Image,string	imageIO: storeImagePNG(img: Image; filename: string)	
+Image	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/imageIO.html#Image	imageIO: Image	
+loadImage	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/imageIO.html#loadImage,string	imageIO: loadImage(filename: string): Image	
+storeImagePNG	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/imageIO.html#storeImagePNG.e,Image,string	imageIO: storeImagePNG(img: Image; filename: string)	

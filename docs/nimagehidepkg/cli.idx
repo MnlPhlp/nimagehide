@@ -1,1 +1,3 @@
-interactiveMenu	/mnt/d/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/cli.html#interactiveMenu	cli: interactiveMenu()	
+interactiveMenu	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/cli.html#interactiveMenu	cli: interactiveMenu()	
+hide	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/cli.html#hide,string,string,string	cli: hide(image: string; secret = &quot;hello World&quot;; output: string)	
+discover	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/cli.html#discover,seq[T][string]	cli: discover(images: seq[string])	
