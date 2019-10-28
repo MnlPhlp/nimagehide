@@ -6,7 +6,7 @@ import
   os
 
 test "hide Data in Image":
-  let img = loadImage("tests/testImage.png")
+  let img = loadImage(joinPath("tests","testImage.png"))
   const data = @[1,3,3,7].map(x => (byte x))
   var expected: seq[byte]
   # fill up the front with 0s
@@ -20,11 +20,11 @@ test "hide Data in Image":
     check((img.data[bit] and 1) == expected[bit])
 
   test "discover Data from Image":
-    let img = loadImage("tests/testImageSecret.png")
+    let img = loadImage(joinPath("tests","testImageSecret.png"))
     let data = img.discoverData()
     check(data.toString() == "Hello Nim World !!")
 
   test "discover and store":
-    discoverAndStore("tests/testImageSecret.png","secret.txt")
+    discoverAndStore(joinPath("tests","testImageSecret.png"),"secret.txt")
     check(readFile("secret.txt")=="Hello Nim World !!")
     removeFile("secret.txt")
