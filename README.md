@@ -5,8 +5,8 @@ For loading the images the library [stb_image](https://github.com/define-private
 Currently only png immages are supported but all loseless encodings supported by stb_image could easily be added.
 
 ## Installation
-```
-  nimble install nimagehide
+```bash
+  >> nimble install nimagehide
 ```
 ## Library usage
 ### Hiding
