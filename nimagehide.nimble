@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.5"
 author        = "MnlPhlp"
 description   = "A library to hide data in images. Usable as library or cli tool."
 license       = "MIT"
