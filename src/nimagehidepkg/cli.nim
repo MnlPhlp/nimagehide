@@ -4,7 +4,7 @@ proc interactiveMenu*() =
   echo "Menu"
 
 proc hide*(image: string,secret = "hello World",output: string) =
-  discard
+  hideAndStore(image,output,secret)
 
 proc discover*(images: seq[string]) =
   for image in images:
