@@ -4,6 +4,9 @@ import
   helpers
 
 method hideData*(img: Image,data: seq[byte]) {.base.} =
+  # first check if the data fits in the image
+  if data.len > img.space():
+    raise newException(OverflowError,"Secret is to big to be stored in given Image")
   var bitCount = 0
   var bit = 0.byte
   var lenBits = data.len.toBits()
