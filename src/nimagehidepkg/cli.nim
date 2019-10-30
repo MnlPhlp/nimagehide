@@ -5,9 +5,17 @@ proc interactiveMenu*() =
 
 proc hide*(image: string,output: string,secret = "",file = "") =
   if secret == "" and file != "":
-    hideAndStoreFile(image,output,file)
+    try:
+      hideAndStoreFile(image,output,file)
+    except OverflowError:
+      echo "Error:"
+      echo "  " & getCurrentExceptionMsg()
   elif file == "" and secret != "":
-    hideAndStore(image,output,secret)
+    try:
+      hideAndStore(image,output,secret)
+    except OverflowError:
+      echo "Error:"
+      echo "  " & getCurrentExceptionMsg()
   else: # no file or secret or both specified
     echo "specify either a secret string (-s) or a file (-f)"
 

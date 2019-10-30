@@ -19,19 +19,28 @@ test "hide Data in Image":
   for bit in 0..71:
     check((img.data[bit] and 1) == expected[bit])
 
-  test "discover Data from Image":
-    let img = loadImage(joinPath("tests","testImageSecret.png"))
-    let data = img.discoverData()
-    check(data.toString() == "Hello Nim World !!")
+test "discover Data from Image":
+  let img = loadImage(joinPath("tests","testImageSecret.png"))
+  let data = img.discoverData()
+  check(data.toString() == "Hello Nim World !!")
 
-  test "discover and store":
-    discoverAndStore(joinPath("tests","testImageSecret.png"),"secret.txt")
-    check(readFile("secret.txt")=="Hello Nim World !!")
-    removeFile("secret.txt")
+test "discover and store":
+  discoverAndStore(joinPath("tests","testImageSecret.png"),"secret.txt")
+  check(readFile("secret.txt")=="Hello Nim World !!")
+  removeFile("secret.txt")
 
-  test "hide file":
-    writeFile("secret.txt","Hello Nim World !!")
-    hideAndStoreFile("tests/testImage.png","imageSecret.png","secret.txt")
-    check(discoverData("imageSecret.png") == "Hello Nim World !!")
-    removeFile("secret.txt")
-    removeFile("imageSecret.png")
+test "hide file":
+  writeFile("secret.txt","Hello Nim World !!")
+  hideAndStoreFile("tests/testImage.png","imageSecret.png","secret.txt")
+  check(discoverData("imageSecret.png") == "Hello Nim World !!")
+  removeFile("secret.txt")
+  removeFile("imageSecret.png")
+
+test "max secret":
+  let img = loadImage("tests/testImage.png")
+  img.hideData(repeat((byte)137,img.space()))
+
+test "to big secret":
+  expect OverflowError:
+    let img = loadImage("tests/testImage.png")
+    img.hideData(repeat((byte)137,img.space()+1))
