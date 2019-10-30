@@ -1,3 +1,0 @@
-toBits	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/helpers.html#toBits,int	helpers: toBits(value: int): seq[byte]	
-toBytes	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/helpers.html#toBytes,string	helpers: toBytes(input: string): seq[byte]	
-toString	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/helpers.html#toString,seq[T][byte]	helpers: toString(str: seq[byte]): string	

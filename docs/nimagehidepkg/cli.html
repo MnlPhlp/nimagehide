@@ -834,8 +834,8 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#interactiveMenu"
     title="interactiveMenu()"><wbr />interactive<wbr />Menu<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#hide%2Cstring%2Cstring%2Cstring"
-    title="hide(image: string; secret = &quot;hello World&quot;; output: string)"><wbr />hide<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#hide%2Cstring%2Cstring%2Cstring%2Cstring"
+    title="hide(image: string; output: string; secret = &quot;&quot;; file = &quot;&quot;)"><wbr />hide<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#discover%2Cseq%5BT%5D%5Bstring%5D"
     title="discover(images: seq[string])"><wbr />discover<span class="attachedType"></span></a></li>
 
@@ -868,8 +868,9 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="https://github.com/MnlPhlp/nimagehide/edit/devel/src/nimagehidepkg/cli.nim#L3" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="hide,string,string,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#hide%2Cstring%2Cstring%2Cstring"><span class="Identifier">hide</span></a><span class="Other">(</span><span class="Identifier">image</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">secret</span> <span class="Other">=</span> <span class="StringLit">&quot;hello World&quot;</span><span class="Other">;</span> <span class="Identifier">output</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="hide,string,string,string,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#hide%2Cstring%2Cstring%2Cstring%2Cstring"><span class="Identifier">hide</span></a><span class="Other">(</span><span class="Identifier">image</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">output</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">secret</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">file</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">STBIException</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">STBIException</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -885,9 +886,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/MnlPhlp/nimagehide/tree/master/src/nimagehidepkg/cli.nim#L9"
+href="https://github.com/MnlPhlp/nimagehide/tree/master/src/nimagehidepkg/cli.nim#L22"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/MnlPhlp/nimagehide/edit/devel/src/nimagehidepkg/cli.nim#L9" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/MnlPhlp/nimagehide/edit/devel/src/nimagehidepkg/cli.nim#L22" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -900,7 +901,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-10-28 20:44:29 UTC</small>
+        <small>Made with Nim. Generated: 2019-10-30 10:13:17 UTC</small>
       </div>
     </div>
   </div>

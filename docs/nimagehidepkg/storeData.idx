@@ -1,4 +1,0 @@
-hideData	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/storeData.html#hideData.e,Image,seq[T][byte]	storeData: hideData(img: Image; data: seq[byte])	
-hideAndStore	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/storeData.html#hideAndStore,string,string,string	storeData: hideAndStore(loadLoacation, storeLocation, secret: string)	
-discoverData	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/storeData.html#discoverData.e,Image	storeData: discoverData(img: Image): seq[byte]	
-discoverAndStore	D:/Programming/nim/nimagehide/src/htmldocs/nimagehidepkg/storeData.html#discoverAndStore,string,string	storeData: discoverAndStore(imageLocation, outFileLocation: string)	
