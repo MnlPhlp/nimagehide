@@ -33,11 +33,15 @@ Currently only png immages are supported but all loseless encodings supported by
 ## CLI usage
 ### Hiding
 ```bash
-  >> nimagehide hide -i 'image.png' -o 'imageSecret.png' -s 'Hello World !!'
+  >> nimagehide hide -i 'image.png' -o 'imageSecret.png' -s 'Hello World !!' #hiding a string
+  >> nimagehide hide -i 'image.png' -o 'imageSecret.png' -f 'secret.txt' #hiding a file
 ```
 ``` -i ``` source image\
 ``` -o ``` output image with secret\
-``` -s ``` secret string to hide
+``` -s ``` secret string to hide\
+``` -f ``` secret file to hide
+
+Use either ```-f``` or ```-s```. Both at the same time does not work.
 
 ### Discovering
 ```bash
