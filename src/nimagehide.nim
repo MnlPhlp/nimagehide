@@ -9,4 +9,4 @@ when isMainModule:
   if paramCount() == 0:
     interactiveMenu()
   else:
-    dispatchMulti([hide],[discover])
+    dispatchMulti([hide],[discover],[cli.space])

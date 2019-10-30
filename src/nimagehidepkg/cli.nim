@@ -1,4 +1,6 @@
-import ../nimagehide
+import 
+  ../nimagehide,
+  strformat
 
 proc interactiveMenu*() = 
   echo "Menu"
@@ -23,3 +25,14 @@ proc discover*(images: seq[string]) =
   for image in images:
     let img = loadImage(image)
     echo img.discoverData().toString()
+
+proc space*(images: seq[string]) =
+  for image in images:
+    let img = loadImage(image)
+    let space = img.space()
+    if space < 1024:
+      echo fmt"{space} bytes"
+    elif space < 1048576:
+      echo fmt"{space/1024:.2f} kb"
+    else:
+      echo fmt"{space/1048576:.2f} mb"
