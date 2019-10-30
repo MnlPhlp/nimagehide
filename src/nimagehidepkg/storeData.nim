@@ -23,12 +23,14 @@ method hideData*(img: Image,data: seq[byte]) {.base.} =
       else:
         img.data[bitCount].clearBit(0)
       bitCount += 1
-
-proc hideAndStore*(loadLoacation, storeLocation, secret: string) =
-  let img = loadImage(loadLoacation)
+      
+proc hideAndStore*(loadLocation, storeLocation, secret: string) =
+  let img = loadImage(loadLocation)
   img.hideData(secret.toBytes())
   img.storeImagePNG(storeLocation)
-  
+
+proc hideAndStoreFile*(loadLocation,storeLocation,secretFile: string) =
+  hideAndStore(loadLocation,storeLocation,readFile(secretFile))  
 
 method discoverData*(img: Image): seq[byte] {.base.} = 
   var dataLen = 0
@@ -51,3 +53,7 @@ proc discoverAndStore*(imageLocation, outFileLocation: string) =
   let img = loadImage(imageLocation)
   let data = img.discoverData()
   writeFile(outFileLocation,data.toString())
+
+proc discoverData*(imageLocation: string): string =
+  let img = loadImage(imageLocation)
+  result = img.discoverData().toString()
