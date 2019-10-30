@@ -28,3 +28,10 @@ test "hide Data in Image":
     discoverAndStore(joinPath("tests","testImageSecret.png"),"secret.txt")
     check(readFile("secret.txt")=="Hello Nim World !!")
     removeFile("secret.txt")
+
+  test "hide file":
+    writeFile("secret.txt","Hello Nim World !!")
+    hideAndStoreFile("tests/testImage.png","imageSecret.png","secret.txt")
+    check(discoverData("imageSecret.png") == "Hello Nim World !!")
+    removeFile("secret.txt")
+    removeFile("imageSecret.png")
