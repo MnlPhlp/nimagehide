@@ -1,9 +1,8 @@
 import 
   ../nimagehide,
-  strformat
+  strformat,
+  cli_menu
 
-proc interactiveMenu*() = 
-  echo "Menu"
 
 proc hide*(image: string,output: string,secret = "",file = "") =
   if secret == "" and file != "":
@@ -27,6 +26,7 @@ proc discover*(images: seq[string]) =
     echo img.discoverData().toString()
 
 proc space*(images: seq[string]) =
+  ## echos out the available storage space for the `images`
   for image in images:
     let img = loadImage(image)
     let space = img.space()
@@ -36,3 +36,17 @@ proc space*(images: seq[string]) =
       echo fmt"{space/1024:.2f} kb"
     else:
       echo fmt"{space/1048576:.2f} mb"
+
+proc spaceMenu() =
+  discard
+proc discoverMenu() =
+  discard
+proc hideMenu() =
+  discard
+
+proc interactiveMenu*() = 
+  subMenus("What do you want to do",@[
+        ("Hide data",hideMenu),
+        ("Discover data",discoverMenu),
+        ("Check storage space",spaceMenu)
+        ])
