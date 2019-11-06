@@ -3,6 +3,10 @@ import
   stb_image/read as stbi,
   stb_image/write as stbw
 
+# Custom exception, only for image reading errors
+# taken from stb_image
+export STBIException
+
 type Image* = ref object
   width,heigth,channels: int
   data*: seq[byte]

@@ -15,7 +15,7 @@ backend       = "c"
 requires "nim >= 1.0.0"
 requires "stb_image >= 2.3"
 requires "cligen >= 0.9.40"
-requires "cli_menu >= 0.1.0" 
+requires "cli_menu >= 0.1.5" 
 
 # Tasks
 import os
