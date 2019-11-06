@@ -832,12 +832,14 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#interactiveMenu"
-    title="interactiveMenu()"><wbr />interactive<wbr />Menu<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#hide%2Cstring%2Cstring%2Cstring%2Cstring"
+      <li><a class="reference" href="#hide%2Cstring%2Cstring%2Cstring%2Cstring"
     title="hide(image: string; output: string; secret = &quot;&quot;; file = &quot;&quot;)"><wbr />hide<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#discover%2Cseq%5BT%5D%5Bstring%5D"
     title="discover(images: seq[string])"><wbr />discover<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#space%2Cseq%5BT%5D%5Bstring%5D"
+    title="space(images: seq[string])"><wbr />space<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#interactiveMenu"
+    title="interactiveMenu()"><wbr />interactive<wbr />Menu<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -857,17 +859,6 @@ function main() {
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
-<a id="interactiveMenu"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#interactiveMenu"><span class="Identifier">interactiveMenu</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-
-&nbsp;&nbsp;<a
-href="https://github.com/MnlPhlp/nimagehide/tree/master/src/nimagehidepkg/cli.nim#L3"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/MnlPhlp/nimagehide/edit/devel/src/nimagehidepkg/cli.nim#L3" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
 <a id="hide,string,string,string,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#hide%2Cstring%2Cstring%2Cstring%2Cstring"><span class="Identifier">hide</span></a><span class="Other">(</span><span class="Identifier">image</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">output</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">secret</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">file</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">STBIException</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">STBIException</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
@@ -875,9 +866,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/MnlPhlp/nimagehide/tree/master/src/nimagehidepkg/cli.nim#L6"
+href="https://github.com/MnlPhlp/nimagehide/tree/master/src/nimagehidepkg/cli.nim#L7"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/MnlPhlp/nimagehide/edit/devel/src/nimagehidepkg/cli.nim#L6" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/MnlPhlp/nimagehide/edit/devel/src/nimagehidepkg/cli.nim#L7" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="discover,seq[T][string]"></a>
@@ -886,9 +877,32 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/MnlPhlp/nimagehide/tree/master/src/nimagehidepkg/cli.nim#L22"
+href="https://github.com/MnlPhlp/nimagehide/tree/master/src/nimagehidepkg/cli.nim#L23"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/MnlPhlp/nimagehide/edit/devel/src/nimagehidepkg/cli.nim#L22" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/MnlPhlp/nimagehide/edit/devel/src/nimagehidepkg/cli.nim#L23" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="space,seq[T][string]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#space%2Cseq%5BT%5D%5Bstring%5D"><span class="Identifier">space</span></a><span class="Other">(</span><span class="Identifier">images</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">STBIException</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+echos out the available storage space for the <tt class="docutils literal"><span class="pre">images</span></tt>
+&nbsp;&nbsp;<a
+href="https://github.com/MnlPhlp/nimagehide/tree/master/src/nimagehidepkg/cli.nim#L28"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/MnlPhlp/nimagehide/edit/devel/src/nimagehidepkg/cli.nim#L28" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="interactiveMenu"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#interactiveMenu"><span class="Identifier">interactiveMenu</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+                       <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/MnlPhlp/nimagehide/tree/master/src/nimagehidepkg/cli.nim#L47"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/MnlPhlp/nimagehide/edit/devel/src/nimagehidepkg/cli.nim#L47" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -901,7 +915,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-10-30 10:13:17 UTC</small>
+        <small>Made with Nim. Generated: 2019-11-05 12:53:32 UTC</small>
       </div>
     </div>
   </div>
