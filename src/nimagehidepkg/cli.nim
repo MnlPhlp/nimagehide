@@ -3,8 +3,8 @@ import
   strformat,
   cli_menu,
   rdstdin,
-  terminal
-
+  os,
+  sugar
 
 proc hide*(image: string,output: string,secret = "",file = "") =
   if secret == "" and file != "":
@@ -40,35 +40,28 @@ proc space*(images: seq[string]) =
     else:
       echo fmt"{space/1048576:.2f} MB"
 
+template space*(image: string) = space(@[image])
+template discover*(image: string) = discover(@[image])
+
+proc checkImagePath(path: string): bool =
+  true
+
 proc showSpace() =
-  clearScreen()
-  try:
-    space(@[readLineFromStdin("path: ")])
-  except STBIException:
-    echo "invalid Path"
-  finally:
-    waitForEnter()
+  let image = getUserInput("Show available storage space","imagepath","invalid imagepath",checkImagePath)
+  space(image)
+  waitForEnter()
 
 proc showData() =
-  clearScreen()
-  try:
-    discover(@[readLineFromStdin("path: ")])
-  except STBIException:
-    echo "invalid Path"
-  finally:
-    waitForEnter()
+  let image = getUserInput("Show hidden data","imagepath","invalid imagepath",checkImagePath)
+  discover(image)
+  waitForEnter()
 
 proc saveData() =
-  clearScreen()
-  try:
-    discoverAndStore(
-      readLineFromStdin("image path: "),
-      readLineFromStdin("store path: ")
-    )
-  except STBIException:
-    echo "invalid image path"
-  except IOError:
-    echo "invalid storage path"
+  let image = getUserInput("Select image to discover from","imagepath","invalid imagepath",checkImagePath)
+  let file = getUserInput("Select file to save data in","filepath","directory does not exist",
+                            x => (x.parentDir & "/.").existsDir(), # check if directory of savefile exists
+                            false)
+  discoverAndStore(image,file)
     
 
 proc spaceMenu() =
@@ -83,31 +76,17 @@ proc discoverMenu() =
   ])
 
 proc hideFile() =
-  clearScreen()
-  try:
-    hide(
-      readLineFromStdin("source image path: "),
-      readLineFromStdin("output image path: "),
-      file = readLineFromStdin("path to hide-file: ")
-    )
-  except STBIException:
-    echo "invalid image path"
-  except IOError:
-    echo "invalid storage path"
+  let imageIn = getUserInput("Select source image","imagepath","invalid imagepath",checkImagePath)
+  let imageOut = getUserInput("Select output image","imagepath","invalid imagepath",checkImagePath,false)
+  let file = getUserInput("Select file to hide","filepath","directory does not exist",existsFile,false)
+  hideAndStoreFile(imageIn,imageOut,file)
 
 
 proc hideText() =
-  clearScreen()
-  try:
-    hide(
-      readLineFromStdin("source image path: "),
-      readLineFromStdin("output image path: "),
-      secret = readLineFromStdin("text to hide: ")
-    )
-  except STBIException:
-    echo "invalid image path"
-  except IOError:
-    echo "invalid storage path"
+  let imageIn = getUserInput("Select source image","imagepath","invalid imagepath",checkImagePath)
+  let imageOut = getUserInput("Select output image","imagepath","invalid imagepath",checkImagePath,false)
+  let secret = getUserInput("Secret message to hide","message",false)
+  hideAndStore(imageIn,imageOut,secret)
 
 proc hideMenu() =
   subMenus("Hide Data",@[
