@@ -40,11 +40,16 @@ proc space*(images: seq[string]) =
     else:
       echo fmt"{space/1048576:.2f} MB"
 
-template space*(image: string) = space(@[image])
-template discover*(image: string) = discover(@[image])
+template space(image: string) = space(@[image])
+template discover(image: string) = discover(@[image])
 
 proc checkImagePath(path: string): bool =
-  true
+  try:
+    discard loadImage(path)
+    result = true
+  except STBIException:
+    result = false
+    
 
 proc showSpace() =
   let image = getUserInput("Show available storage space","imagepath","invalid imagepath",checkImagePath)
@@ -64,11 +69,6 @@ proc saveData() =
   discoverAndStore(image,file)
     
 
-proc spaceMenu() =
-  subMenus("Check storage space of an Image",@[
-    ("Choose image",showSpace)
-  ])
-  
 proc discoverMenu() =
   subMenus("Discover Data",@[
     ("Output data",showData),
@@ -98,5 +98,5 @@ proc interactiveMenu*() =
   subMenus("What do you want to do",@[
         ("Hide data",hideMenu),
         ("Discover data",discoverMenu),
-        ("Check storage space",spaceMenu)
+        ("Check storage space",showSpace)
         ])
