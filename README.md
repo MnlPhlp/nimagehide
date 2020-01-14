@@ -49,4 +49,4 @@ Use either ```-f``` or ```-s```. Both at the same time does not work.
   >> nimagehide discover 'imageSecret.png'
   >> Hello World !!
 ```
-Multiple files can be specified and all the hidden strings will be showed.
+Multiple files can be specified and all the hidden strings will be shown.
